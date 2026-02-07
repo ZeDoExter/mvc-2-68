@@ -5,7 +5,6 @@ from datetime import datetime
 DB_FILE = 'database.json'
 
 def init_db():
-    """สร้างไฟล์ JSON ถ้ายังไม่มี"""
     if not os.path.exists(DB_FILE):
         data = {
             'shelters': [
@@ -56,29 +55,23 @@ def init_db():
             json.dump(data, f, ensure_ascii=False, indent=2)
 
 def load():
-    """โหลดข้อมูล"""
     with open(DB_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
 def save(data):
-    """บันทึกข้อมูล"""
     with open(DB_FILE, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 def get_shelters():
-    """ดึงศูนย์พักพิงทั้งหมด"""
     return load()['shelters']
 
 def get_citizens():
-    """ดึงประชาชนทั้งหมด"""
     return load()['citizens']
 
 def get_assignments():
-    """ดึงการจัดสรรทั้งหมด"""
     return load()['assignments']
 
 def add_citizen(citizen_id, name, age, health, ctype):
-    """เพิ่มประชาชน"""
     data = load()
     data['citizens'].append({
         'id': citizen_id,
@@ -91,12 +84,10 @@ def add_citizen(citizen_id, name, age, health, ctype):
     save(data)
 
 def citizen_exists(citizen_id):
-    """เช็คว่าประชาชนมีแล้วหรือไม่"""
     data = load()
     return any(c['id'] == citizen_id for c in data['citizens'])
 
 def allocate():
-    """จัดสรรประชาชนไปยังศูนย์พักพิง"""
     data = load()
     
     # เรียงลำดับ: VIP > risk_group > normal และ เด็ก/ผู้สูงอายุก่อน
