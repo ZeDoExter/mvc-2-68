@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>รายงานผล</title>
+</head>
+<body>
+    <table border="0" width="100%">
+        <tr>
+            <td width="200" valign="top">
+                <h3>เมนู</h3>
+                <ul>
+                    <li><a href="/">หน้าแรก</a></li>
+                    <li><a href="/register">ลงทะเบียนประชาชน</a></li>
+                    <li><a href="/shelters">จัดสรรที่พัก</a></li>
+                    <li><a href="/report">รายงานผล</a></li>
+                </ul>
+            </td>
+            <td valign="top">
+                <h1>รายงานผลการจัดสรร</h1>
+                
+                <hr>
+                
+                <h2>สรุป</h2>
+                <p>ประชาชนทั้งหมด: {{ data.total }} คน</p>
+                <p>ได้ที่พัก: {{ data.assigned|length }} คน</p>
+                <p>ยังไม่ได้: {{ data.unassigned|length }} คน</p>
+                
+                <hr>
+                
+                <h2>ประชาชนที่ได้ที่พัก ({{ data.assigned|length }} คน)</h2>
+                {% if data.assignments %}
+                <table border="1">
+                    <tr>
+                        <th>รหัสประชาชน</th>
+                        <th>ชื่อ</th>
+                        <th>รหัสศูนย์</th>
+                        <th>ชื่อศูนย์</th>
+                        <th>วันที่</th>
+                    </tr>
+                    {% for a in data.assignments %}
+                    <tr>
+                        <td>{{ a.citizen_id }}</td>
+                        <td>{{ a.citizen_name }}</td>
+                        <td>{{ a.shelter_id }}</td>
+                        <td>{{ a.shelter_name }}</td>
+                        <td>{{ a.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <p>ยังไม่มีการจัดสรร</p>
+                {% endif %}
+                
+                <hr>
+                
+                <h2>ประชาชนที่ยังไม่ได้ที่พัก ({{ data.unassigned|length }} คน)</h2>
+                {% if data.unassigned %}
+                <table border="1">
+                    <tr>
+                        <th>รหัส</th>
+                        <th>ชื่อ</th>
+                        <th>อายุ</th>
+                        <th>สุขภาพ</th>
+                        <th>ประเภท</th>
+                    </tr>
+                    {% for c in data.unassigned %}
+                    <tr>
+                        <td>{{ c.id }}</td>
+                        <td>{{ c.name }}</td>
+                        <td>{{ c.age }}</td>
+                        <td>{{ c.health }}</td>
+                        <td>{{ c.type }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <p>ทุกคนได้ที่พักแล้ว</p>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

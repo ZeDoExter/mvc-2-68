@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ลงทะเบียนประชาชน</title>
+</head>
+<body>
+    <table border="0" width="100%">
+        <tr>
+            <td width="200" valign="top">
+                <h3>เมนู</h3>
+                <ul>
+                    <li><a href="/">หน้าแรก</a></li>
+                    <li><a href="/register">ลงทะเบียนประชาชน</a></li>
+                    <li><a href="/shelters">จัดสรรที่พัก</a></li>
+                    <li><a href="/report">รายงานผล</a></li>
+                </ul>
+            </td>
+            <td valign="top">
+                <h1>ลงทะเบียนประชาชน</h1>
+                
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <p><strong>{{ message }}</strong></p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                
+                <hr>
+                
+                <h2>ฟอร์มลงทะเบียน</h2>
+                <form method="POST">
+                    <p>รหัส: <input type="text" name="id" required></p>
+                    <p>ชื่อ: <input type="text" name="name" required></p>
+                    <p>อายุ: <input type="number" name="age" required></p>
+                    <p>สุขภาพ: 
+                        <select name="health" required>
+                            <option value="healthy">ปกติ</option>
+                            <option value="at_risk">เสี่ยง</option>
+                        </select>
+                    </p>
+                    <p>ประเภท: 
+                        <select name="type" required>
+                            <option value="vip">VIP</option>
+                            <option value="risk_group">กลุ่มเสี่ยง</option>
+                            <option value="normal">ทั่วไป</option>
+                        </select>
+                    </p>
+                    <button type="submit">ลงทะเบียน</button>
+                </form>
+                
+                <hr>
+                
+                <h2>ประชาชนทั้งหมด ({{ all|length }} คน)</h2>
+                <table border="1">
+                    <tr>
+                        <th>รหัส</th>
+                        <th>ชื่อ</th>
+                        <th>อายุ</th>
+                        <th>สุขภาพ</th>
+                        <th>ประเภท</th>
+                        <th>ได้ที่พัก</th>
+                    </tr>
+                    {% for c in all %}
+                    <tr>
+                        <td>{{ c.id }}</td>
+                        <td>{{ c.name }}</td>
+                        <td>{{ c.age }}</td>
+                        <td>{{ c.health }}</td>
+                        <td>{{ c.type }}</td>
+                        <td>{% if c.assigned %}ใช่{% else %}ไม่{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                
+                <hr>
+                
+                <h3>VIP ({{ vip|length }} คน)</h3>
+                <table border="1">
+                    <tr><th>รหัส</th><th>ชื่อ</th><th>อายุ</th></tr>
+                    {% for c in vip %}
+                    <tr><td>{{ c.id }}</td><td>{{ c.name }}</td><td>{{ c.age }}</td></tr>
+                    {% endfor %}
+                </table>
+                
+                <h3>กลุ่มเสี่ยง ({{ risk|length }} คน)</h3>
+                <table border="1">
+                    <tr><th>รหัส</th><th>ชื่อ</th><th>อายุ</th></tr>
+                    {% for c in risk %}
+                    <tr><td>{{ c.id }}</td><td>{{ c.name }}</td><td>{{ c.age }}</td></tr>
+                    {% endfor %}
+                </table>
+                
+                <h3>ทั่วไป ({{ normal|length }} คน)</h3>
+                <table border="1">
+                    <tr><th>รหัส</th><th>ชื่อ</th><th>อายุ</th></tr>
+                    {% for c in normal %}
+                    <tr><td>{{ c.id }}</td><td>{{ c.name }}</td><td>{{ c.age }}</td></tr>
+                    {% endfor %}
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

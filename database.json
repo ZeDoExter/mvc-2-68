@@ -1,0 +1,282 @@
+{
+  "shelters": [
+    {
+      "id": "S001",
+      "name": "ศูนย์ตัวเมือง",
+      "capacity": 4,
+      "risk": "low",
+      "current": 0
+    },
+    {
+      "id": "S002",
+      "name": "ศูนย์ชื่นชัย",
+      "capacity": 6,
+      "risk": "medium",
+      "current": 0
+    },
+    {
+      "id": "S003",
+      "name": "ศูนย์นครสวรรค์",
+      "capacity": 5,
+      "risk": "high",
+      "current": 0
+    },
+    {
+      "id": "S004",
+      "name": "ศูนย์เฉลิม",
+      "capacity": 3,
+      "risk": "low",
+      "current": 0
+    },
+    {
+      "id": "S005",
+      "name": "ศูนย์สมเด็จ",
+      "capacity": 7,
+      "risk": "medium",
+      "current": 0
+    }
+  ],
+  "citizens": [
+    {
+      "id": "C001",
+      "name": "นายสุชัย สมิทธิ",
+      "age": 55,
+      "health": "healthy",
+      "type": "vip",
+      "assigned": false
+    },
+    {
+      "id": "C002",
+      "name": "นางสมเด็จ ใจสงค์",
+      "age": 70,
+      "health": "at_risk",
+      "type": "vip",
+      "assigned": false
+    },
+    {
+      "id": "C003",
+      "name": "นายวิทยา เรืองสว่าง",
+      "age": 8,
+      "health": "healthy",
+      "type": "vip",
+      "assigned": false
+    },
+    {
+      "id": "C004",
+      "name": "นางปิยพัฒน์ บูรพ",
+      "age": 50,
+      "health": "healthy",
+      "type": "vip",
+      "assigned": false
+    },
+    {
+      "id": "C005",
+      "name": "นายอนุชิต สิงห์",
+      "age": 62,
+      "health": "at_risk",
+      "type": "vip",
+      "assigned": false
+    },
+    {
+      "id": "C006",
+      "name": "น้อย สมชาย",
+      "age": 8,
+      "health": "healthy",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C007",
+      "name": "เนม สุชีร์",
+      "age": 10,
+      "health": "healthy",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C008",
+      "name": "หนึ่ง จริยา",
+      "age": 5,
+      "health": "at_risk",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C009",
+      "name": "สอง ศิริพัฒน์",
+      "age": 9,
+      "health": "healthy",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C010",
+      "name": "ยายแจม ประสิทธิ",
+      "age": 72,
+      "health": "at_risk",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C011",
+      "name": "ปู่สุมิตร พิพัฒน์",
+      "age": 68,
+      "health": "healthy",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C012",
+      "name": "ยายวิไล เสนา",
+      "age": 65,
+      "health": "at_risk",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C013",
+      "name": "ปู่คำชัย กำธร",
+      "age": 70,
+      "health": "healthy",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C014",
+      "name": "น้ำหนึ่ง กิตติ",
+      "age": 7,
+      "health": "healthy",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C015",
+      "name": "ยายมณฑา อินทร์",
+      "age": 64,
+      "health": "healthy",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C016",
+      "name": "ปู่มิ่ง วิจารณ์",
+      "age": 75,
+      "health": "at_risk",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C017",
+      "name": "ออม ศรีภา",
+      "age": 11,
+      "health": "at_risk",
+      "type": "risk_group",
+      "assigned": false
+    },
+    {
+      "id": "C018",
+      "name": "สมชาย ใจดี",
+      "age": 25,
+      "health": "healthy",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C019",
+      "name": "อรพิณ รัตนา",
+      "age": 30,
+      "health": "healthy",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C020",
+      "name": "สมศักดิ์ อภิมาน",
+      "age": 28,
+      "health": "at_risk",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C021",
+      "name": "นรินทร์ สิงห์",
+      "age": 35,
+      "health": "healthy",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C022",
+      "name": "จารุวรรณ ไชยสิทธิ",
+      "age": 26,
+      "health": "healthy",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C023",
+      "name": "วิชัย อมรสิทธิ",
+      "age": 40,
+      "health": "healthy",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C024",
+      "name": "พรชนก เฉิดฉาย",
+      "age": 32,
+      "health": "at_risk",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C025",
+      "name": "ธวัฒน์ ศรีศร",
+      "age": 29,
+      "health": "healthy",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C026",
+      "name": "ประพัฒน์ นาคนิคม",
+      "age": 42,
+      "health": "healthy",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C027",
+      "name": "สิรินญา บวรพร",
+      "age": 27,
+      "health": "healthy",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C028",
+      "name": "ชัยพร สัทธาพร",
+      "age": 38,
+      "health": "at_risk",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C029",
+      "name": "ภัคจรา อมรผล",
+      "age": 24,
+      "health": "healthy",
+      "type": "normal",
+      "assigned": false
+    },
+    {
+      "id": "C030",
+      "name": "กมล ชิมพลา",
+      "age": 36,
+      "health": "healthy",
+      "type": "normal",
+      "assigned": false
+    }
+  ],
+  "assignments": []
+}

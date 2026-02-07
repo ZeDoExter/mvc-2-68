@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ระบบจัดสรรที่หลบภัย</title>
+</head>
+<body>
+    <table border="0" width="100%">
+        <tr>
+            <td width="200" valign="top">
+                <h3>เมนู</h3>
+                <ul>
+                    <li><a href="/">หน้าแรก</a></li>
+                    <li><a href="/register">ลงทะเบียนประชาชน</a></li>
+                    <li><a href="/shelters">จัดสรรที่พัก</a></li>
+                    <li><a href="/report">รายงานผล</a></li>
+                </ul>
+            </td>
+            <td valign="top">
+                <h1>ระบบจัดสรรที่หลบภัยในสถานการณ์ฉุกเฉิน</h1>
+                
+                <hr>
+                
+                <h2>สรุป</h2>
+                <p>ประชาชนทั้งหมด: {{ total }} คน</p>
+                <p>ยังไม่ได้ที่พัก: {{ unassigned }} คน</p>
+                
+                <h2>ศูนย์พักพิงทั้งหมด</h2>
+                <table border="1">
+                    <tr>
+                        <th>รหัส</th>
+                        <th>ชื่อ</th>
+                        <th>ความจุ</th>
+                        <th>ปัจจุบัน</th>
+                        <th>ว่าง</th>
+                        <th>ระดับเสี่ยง</th>
+                    </tr>
+                    {% for s in shelters %}
+                    <tr>
+                        <td>{{ s.id }}</td>
+                        <td>{{ s.name }}</td>
+                        <td>{{ s.capacity }}</td>
+                        <td>{{ s.current }}</td>
+                        <td>{{ s.capacity - s.current }}</td>
+                        <td>{{ s.risk }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
